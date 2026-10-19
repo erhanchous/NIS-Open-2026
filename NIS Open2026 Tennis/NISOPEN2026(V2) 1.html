@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIS Open 2026 — Теннисный турнир</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo-link">
+            <img src="NISOPENlogo.png"
+                 alt="NIS Open 2026"
+                 class="site-logo">
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Главная</a>
+            <a href="#players">Участники</a>
+            <a href="#schedule">Расписание</a>
+            <a href="#info">О турнире</a>
+
+            <button onclick="openRegistration()">Зарегистрироваться —</button>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+    <!-- HERO -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    🏆 10–11 октября 2026
+                </div>
+
+                <h2>
+                    Добро пожаловать<br>
+                    на <span>NIS Open</span>
+                </h2>
+
+                <p class="hero-description">
+                    Любительский теннисный турнир NIS.
+                    Соревнуйся, развивайся и получай удовольствие
+                    от игры вместе с другими участниками.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-button"
+                            onclick="openRegistration()">
+                        Зарегистрироваться →
+                    </button>
+
+                    <a class="secondary-button"
+                       href="#schedule">
+                        Смотреть расписание
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="tennis-ball"></div>
+            <div class="court-lines"></div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <span class="stat-number" id="participantsCount">4</span>
+                <span class="stat-title">участника</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎾</div>
+                <span class="stat-number">3</span>
+                <span class="stat-title">матча</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <span class="stat-number">2</span>
+                <span class="stat-title">дня турнира</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <span class="stat-number">0 ₸</span>
+                <span class="stat-title">стоимость участия</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         NEXT MATCH
+    ================================================= -->
+
+    <div class="section-heading">
+        <h2>Следующий матч</h2>
+        <p>Не пропусти начало турнира</p>
+    </div>
+
+    <section class="next-match">
+
+        <div class="match-top">
+
+            <div class="match-title">
+
+                <div class="match-title-icon">
+                    🎾
+                </div>
+
+                <div>
+                    <h2>Матч №1</h2>
+                    <p>Первый круг • Корт №1</p>
+                </div>
+
+            </div>
+
+            <div class="live-badge">
+                ● Запланирован
+            </div>
+
+        </div>
+
+
+        <div class="match-card">
+
+            <div class="player">
+
+                <div class="avatar">Е</div>
+
+                <div>
+                    <h3>Ерхан</h3>
+                    <small>Любитель</small>
+                </div>
+
+            </div>
+
+
+            <div class="versus">
+
+                <strong>VS</strong>
+
+                <span>
+                    10 октября 2026<br>
+                    10:00
+                </span>
+
+            </div>
+
+
+            <div class="player">
+
+                <div class="avatar">А</div>
+
+                <div>
+                    <h3>Адиль</h3>
+                    <small>Любитель</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TIMER -->
+
+        <div class="timer">
+
+            <div class="time-box">
+                <strong id="days">00</strong>
+                <span>дней</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <span>часов</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <span>минут</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <span>секунд</span>
+            </div>
+
+        </div>
+
+        <p id="timerMessage">
+            До начала первого матча
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         PLAYERS
+    ================================================= -->
+
+    <div class="section-heading" id="players">
+        <h2>Участники турнира</h2>
+        <p>Список зарегистрированных игроков</p>
+    </div>
+
+    <section class="table-card">
+
+        <div class="table-scroll">
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>№</th>
+                    <th>Игрок</th>
+                    <th>Возраст</th>
+                    <th>Уровень</th>
+                    <th>Разряд</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="playersBody">
+
+                <tr>
+                    <td>1</td>
+                    <td class="player-name">Ерхан</td>
+                    <td>17</td>
+                    <td>
+                        <span class="level">Любитель</span>
+                    </td>
+                    <td class="rank">Одиночный</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td class="player-name">Адиль</td>
+                    <td>17</td>
+                    <td>
+                        <span class="level">Любитель</span>
+                    </td>
+                    <td class="rank">Одиночный</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td class="player-name">Александр</td>
+                    <td>18</td>
+                    <td>
+                        <span class="level">Любитель</span>
+                    </td>
+                    <td class="rank">Одиночный</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td class="player-name">Данияр</td>
+                    <td>19</td>
+                    <td>
+                        <span class="level">Продвинутый</span>
+                    </td>
+                    <td class="rank">Одиночный</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SCHEDULE
+    ================================================= -->
+
+    <div class="section-heading" id="schedule">
+        <h2>Расписание матчей</h2>
+        <p>Все матчи турнира NIS Open 2026</p>
+    </div>
+
+
+    <section class="schedule-grid">
+
+        <div class="match-schedule">
+
+            <div class="match-date">
+                10 ОКТЯБРЯ • 10:00
+            </div>
+
+            <div class="schedule-players">
+
+                <span class="schedule-player">
+                    Ерхан
+                </span>
+
+                <span class="schedule-vs">
+                    VS
+                </span>
+
+                <span class="schedule-player">
+                    Адиль
+                </span>
+
+            </div>
+
+            <div class="match-info">
+                <span>🎾 Корт №1</span>
+                <span>1/2 финала</span>
+            </div>
+
+        </div>
+
+
+        <div class="match-schedule">
+
+            <div class="match-date">
+                10 ОКТЯБРЯ • 12:00
+            </div>
+
+            <div class="schedule-players">
+
+                <span class="schedule-player">
+                    Александр
+                </span>
+
+                <span class="schedule-vs">
+                    VS
+                </span>
+
+                <span class="schedule-player">
+                    Данияр
+                </span>
+
+            </div>
+
+            <div class="match-info">
+                <span>🎾 Корт №1</span>
+                <span>1/2 финала</span>
+            </div>
+
+        </div>
+
+
+        <div class="match-schedule">
+
+            <div class="match-date">
+                11 ОКТЯБРЯ • 11:00
+            </div>
+
+            <div class="schedule-players">
+
+                <span class="schedule-player">
+                    Победитель 1
+                </span>
+
+                <span class="schedule-vs">
+                    VS
+                </span>
+
+                <span class="schedule-player">
+                    Победитель 2
+                </span>
+
+            </div>
+
+            <div class="match-info">
+                <span>🎾 Корт №1</span>
+                <span>ФИНАЛ</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         INFO
+    ================================================= -->
+
+    <div class="section-heading" id="info">
+        <h2>О турнире</h2>
+        <p>Основная информация о соревновании</p>
+    </div>
+
+
+    <section class="info-grid">
+
+        <div class="info-card">
+
+            <h2>📋 Информация</h2>
+
+            <div class="info-list">
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+                        📍
+                    </div>
+
+                    <div>
+                        <strong>Место проведения</strong>
+                        <span>
+                            Центральный теннисный корт NIS Qaragandy
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <strong>Дата</strong>
+                        <span>
+                            10–11 октября 2026 года
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+                        🎾
+                    </div>
+
+                    <div>
+                        <strong>Формат</strong>
+                        <span>
+                            Одиночный и парный разряд
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <strong>Возраст</strong>
+                        <span>
+                            От 16 лет
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-item-icon">
+                        💰
+                    </div>
+
+                    <div>
+                        <strong>Участие</strong>
+                        <span>
+                            Бесплатное
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card contact-box">
+
+            <h2>📞 Контакты</h2>
+
+            <p>
+                Если у вас появились вопросы по турниру,
+                регистрации или расписанию — свяжитесь с организаторами.
+            </p>
+
+            <a class="contact-email"
+               href="mailto:Beksultan_E9112@krg.nis.edu.kz">
+                Beksultan_E9112@krg.nis.edu.kz
+            </a>
+
+            <p>
+                📱 +7 (777) 050-58-27
+            </p>
+
+            <button class="primary-button"
+                    onclick="openRegistration()">
+                Принять участие
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        <strong>NIS Open 2026</strong>
+    </p>
+
+    <p>
+        Первый теннисный турнир в NIS
+    </p>
+
+    <p>
+        © 2026 Made by Yerkhan
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     REGISTRATION MODAL
+===================================================== -->
+
+<dialog id="registrationModal">
+
+    <div class="modal">
+
+        <button class="close-modal"
+                onclick="closeRegistration()">
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <h2>Регистрация на турнир</h2>
+
+            <p>
+                Заполните форму, чтобы принять участие
+                в NIS Open 2026.
+            </p>
+
+        </div>
+
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+
+                <label for="name">
+                    ФИО
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Например: Иван Иванов"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="age">
+                        Возраст
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="16"
+                        max="100"
+                        placeholder="17"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="level">
+                        Уровень
+                    </label>
+
+                    <select id="level">
+
+                        <option value="Любитель">
+                            Любитель
+                        </option>
+
+                        <option value="Продвинутый">
+                            Продвинутый
+                        </option>
+
+                        <option value="Профессионал">
+                            Профессионал
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="discharge">
+                        Разряд
+                    </label>
+
+                    <select id="discharge">
+
+                        <option value="Одиночный">
+                            Одиночный
+                        </option>
+
+                        <option value="Парный">
+                            Парный
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@mail.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button type="submit"
+                    class="submit-button">
+                Зарегистрироваться 🎾
+            </button>
+
+        </form>
+
+    </div>
+
+</dialog>
+
+
+<!-- =====================================================
+     SUCCESS POPUP
+===================================================== -->
+
+<div class="success-popup"
+     id="successPopup">
+
+    <button class="close-success"
+            onclick="closeSuccess()">
+        ×
+    </button>
+
+    <div class="success-content">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <div class="success-text">
+
+            <h3>
+                Успешно!
+            </h3>
+
+            <p>
+                Вы зарегистрированы на NIS Open 2026.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<!-- Подключаем библиотеку Supabase -->
+<!-- Подключаем библиотеку Supabase локально -->
+<script src="supabase.js"></script>
+
+<script>
+    /* =====================================================
+       НАСТРОЙКА SUPABASE
+    ===================================================== */
+    const SUPABASE_URL = "https://skmdoxzqcqltznajfemz.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_R6uigvxp9Lvjg7m600SUgA_hPI7hFp5";
+
+    /* =====================================================
+       MODAL (ОТКРЫТИЕ И ЗАКРЫТИЕ ФОРМЫ)
+    ===================================================== */
+    const modal = document.getElementById("registrationModal");
+
+    function openRegistration() {
+        if (modal) {
+            if (typeof modal.showModal === "function") {
+                modal.showModal();
+            } else {
+                modal.setAttribute("open", "");
+            }
+        }
+    }
+
+    function closeRegistration() {
+        if (modal && modal.open) {
+            modal.close();
+        }
+    }
+
+    /* Закрытие при клике по затемнению */
+    if (modal) {
+        modal.addEventListener("click", function(event) {
+            const rect = modal.getBoundingClientRect();
+            const inside =
+                event.clientX >= rect.left &&
+                event.clientX <= rect.right &&
+                event.clientY >= rect.top &&
+                event.clientY <= rect.bottom;
+
+            if (!inside) {
+                closeRegistration();
+            }
+        });
+    }
+
+    /* =====================================================
+       ЭЛЕМЕНТЫ ФОРМЫ И ТАБЛИЦЫ
+    ===================================================== */
+    const form = document.getElementById("registrationForm");
+    const successPopup = document.getElementById("successPopup");
+    const playersBody = document.getElementById("playersBody");
+    const participantsCount = document.getElementById("participantsCount");
+
+    let registeredPlayers = [];
+
+    /* =====================================================
+       ПОЛУЧЕНИЕ ИГРОКОВ ИЗ БАЗЫ ДАННЫХ (ЧЕРЕЗ FETCH)
+    ===================================================== */
+    async function fetchPlayersFromSupabase() {
+        if (!playersBody) return;
+        playersBody.innerHTML = "";
+
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/tournament_players?select=*`, {
+                method: "GET",
+                headers: {
+                    "apikey": SUPABASE_ANON_KEY,
+                    "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                registeredPlayers = data || [];
+
+                registeredPlayers.forEach(function(player) {
+                    addPlayerToTable(player, false);
+                });
+
+                updateParticipantsCount();
+            }
+        } catch (err) {
+            console.error("Ошибка загрузки данных:", err.message);
+        }
+    }
+
+    /* =====================================================
+       ДОБАВЛЕНИЕ ИГРОКА В ТАБЛИЦУ
+    ===================================================== */
+    function addPlayerToTable(player, updateCount = true) {
+        if (!playersBody) return;
+        const row = document.createElement("tr");
+        const number = playersBody.rows.length + 1;
+
+        row.innerHTML = `
+            <td>${number}</td>
+            <td class="player-name">${escapeHTML(player.name)}</td>
+            <td>${escapeHTML(player.age)}</td>
+            <td><span class="level">${escapeHTML(player.level)}</span></td>
+            <td class="rank">${escapeHTML(player.discharge)}</td>
+        `;
+
+        playersBody.appendChild(row);
+
+        if (updateCount) {
+            updateParticipantsCount();
+        }
+    }
+
+    /* Безопасный вывод текста */
+    function escapeHTML(text) {
+        const div = document.createElement("div");
+        div.textContent = text || "";
+        return div.innerHTML;
+    }
+
+    /* Обновление количества участников */
+    function updateParticipantsCount() {
+        if (participantsCount) {
+            participantsCount.textContent = registeredPlayers.length;
+        }
+    }
+
+    /* =====================================================
+       ОТПРАВКА ФОРМЫ (ФИКС ОШИБОК И file:// ОГРАНИЧЕНИЙ)
+    ===================================================== */
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const age = document.getElementById("age").value;
+            const level = document.getElementById("level").value;
+            const discharge = document.getElementById("discharge").value;
+            const email = document.getElementById("email").value.trim();
+
+            /* Проверка возраста */
+            if (Number(age) < 16) {
+                alert("Для участия в турнире необходимо быть не младше 16 лет.");
+                return;
+            }
+
+            const newPlayer = {
+                name: name,
+                age: parseInt(age),
+                level: level,
+                discharge: discharge,
+                email: email
+            };
+
+                        // Подготавливаем данные как стандартную форму (в обход CORS preflight)
+            const formData = new URLSearchParams();
+            formData.append('name', name);
+            formData.append('age', parseInt(age));
+            formData.append('level', level);
+            formData.append('discharge', discharge);
+            formData.append('email', email);
+
+                        try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/tournament_players`, {
+                    method: "POST",
+                    headers: {
+                        "apikey": SUPABASE_ANON_KEY,
+                        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                        "Content-Type": "application/json",
+                        "Prefer": "return=representation"
+                    },
+                    body: JSON.stringify(newPlayer)
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json();
+                    if (errData.code === "23505") {
+                        alert("Игрок с таким Email уже зарегистрирован!");
+                    } else {
+                        alert("Ошибка базы: " + errData.message);
+                    }
+                    return;
+                }
+
+
+                await fetchPlayersFromSupabase();
+                closeRegistration();
+                form.reset();
+                showSuccess();
+
+                        } catch (err) {
+                alert("Не удалось связаться с базой данных: " + err.message);
+            }
+        }); 
+    }
+
+
+
+    /* =====================================================
+       SUCCESS POPUP
+    ===================================================== */
+    function showSuccess() {
+        if (successPopup) {
+            successPopup.classList.add("show");
+            setTimeout(function() {
+                successPopup.classList.remove("show");
+            }, 4000);
+        }
+    }
+
+    function closeSuccess() {
+        if (successPopup) {
+            successPopup.classList.remove("show");
+        }
+    }
+
+    /* =====================================================
+       COUNTDOWN TIMER
+    ===================================================== */
+    const matchDate = new Date("2026-10-10T10:00:00");
+
+    function updateTimer() {
+        const now = new Date();
+        const difference = matchDate - now;
+
+        const dEl = document.getElementById("days");
+        const hEl = document.getElementById("hours");
+        const mEl = document.getElementById("minutes");
+        const sEl = document.getElementById("seconds");
+        const msgEl = document.getElementById("timerMessage");
+
+        if (difference <= 0) {
+            if (dEl) dEl.textContent = "00";
+            if (hEl) hEl.textContent = "00";
+            if (mEl) mEl.textContent = "00";
+            if (sEl) sEl.textContent = "00";
+            if (msgEl) msgEl.textContent = "🎾 Матч уже начался!";
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        if (dEl) dEl.textContent = String(days).padStart(2, "0");
+        if (hEl) hEl.textContent = String(hours).padStart(2, "0");
+        if (mEl) mEl.textContent = String(minutes).padStart(2, "0");
+        if (sEl) sEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    /* =====================================================
+       ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
+    ===================================================== */
+    document.addEventListener("DOMContentLoaded", fetchPlayersFromSupabase);
+</script>
+
+</body>
+</html>
