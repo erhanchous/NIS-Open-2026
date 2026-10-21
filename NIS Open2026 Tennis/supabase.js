@@ -2,8 +2,8 @@
    ИНИЦИАЛИЗАЦИЯ SUPABASE
 ===================================================== */
 // Если библиотека подключена через HTML CDN, мы используем window.supabase
-const SUPABASE_URL = 'ТВОЙ_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'ТВОЙ_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://supabase.com/dashboard/project/skmdoxzqcqltznajfemz/settings/api-keys';
+const SUPABASE_ANON_KEY = 'sb_publishable_R6uigvxp9Lvjg7m600SUgA_hPI7hFp5';
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* =====================================================
