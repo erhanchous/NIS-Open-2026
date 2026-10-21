@@ -11,7 +11,7 @@
 
                 // Если всё ок, обновляем список игроков на экране
                 fetchPlayersFromSupabase();
-
+                fetchMatchesForBracket();
                 /* Закрываем и очищаем форму */
                 closeRegistration();
                 form.reset();
