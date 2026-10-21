@@ -1126,3 +1126,166 @@
                 bottom: 15px;
             }
         }
+/* =====================================================
+   ТУРНИРНАЯ СЕТКА (NIS OPEN BRACKET)
+===================================================== */
+
+#bracket-container {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.bracket-round {
+    display: flex;
+    flex-col-gap: 30px;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .bracket-round {
+        width: auto;
+    }
+}
+
+.bracket-match-card {
+    background: #white;
+    border: 1px solid #dcece9;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(20, 80, 80, .05);
+    overflow: hidden;
+    transition: .25s;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .bracket-match-card {
+        width: 260px;
+    }
+}
+
+.bracket-match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(20, 80, 80, .1);
+}
+
+.bracket-match-header {
+    background: #f2faf8;
+    border-bottom: 1px solid #e1efec;
+    color: #729096;
+    display: flex;
+    font-size: 11px;
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 10px 14px;
+    text-transform: uppercase;
+}
+
+.bracket-match-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.bracket-player-row {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #42666b;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    transition: .2s;
+}
+
+.player-name-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.player-score-badge {
+    background: #eef8f5;
+    border: 1px solid #d3e4e1;
+    border-radius: 6px;
+    color: #173b43;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2px 8px;
+}
+
+/* Подсветка победителя в полуфинале */
+.bracket-player-row.winner {
+    background-color: #e7f6ef;
+    color: #08745e;
+    font-weight: bold;
+}
+
+.bracket-player-row.winner .player-score-badge {
+    background: #07916e;
+    border-color: #05795d;
+    color: white;
+}
+
+/* Стили для стрелочек на ПК */
+.bracket-arrows {
+    align-items: center;
+    color: #b3cfc9;
+    display: none;
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .bracket-arrows {
+        display: flex;
+        height: 180px;
+    }
+}
+
+/* Оформление карточки ФИНАЛА */
+.final-round {
+    justify-content: center;
+}
+
+.final-card {
+    border: 2px solid #e2a100;
+    position: relative;
+}
+
+.final-badge {
+    background: #e2a100;
+    border-radius: 50px;
+    color: #173b43;
+    font-size: 10px;
+    font-weight: 900;
+    left: 50%;
+    padding: 3px 12px;
+    position: absolute;
+    text-transform: uppercase;
+    top: -10px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.final-card .bracket-match-header {
+    background: #fffbef;
+    border-bottom: 1px solid #f9edd2;
+    padding-top: 14px;
+}
+
+/* Подсветка абсолютного чемпиона */
+.bracket-player-row.winner-final {
+    background: linear-gradient(135deg, #fff9e6, #fff3cd);
+    color: #b28000;
+    font-weight: bold;
+}
+
+.bracket-player-row.winner-final .player-score-badge {
+    background: #e2a100;
+    border-color: #c68d00;
+    color: #173b43;
+}
