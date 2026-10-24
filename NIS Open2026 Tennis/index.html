@@ -669,7 +669,7 @@
 
 <!-- Подключаем библиотеку Supabase -->
 <!-- Подключаем библиотеку Supabase локально -->
-<script src="supabase.js"></script>
+<!-- <script src="supabase.js"></script> -->
 
 <script>
     /* =====================================================
@@ -928,16 +928,22 @@
       <!-- ...твой существующий код сайта... -->
 
   <!-- Подключаем скрипт Supabase и логику сетки перед закрытием body -->
-  <script src="https://jsdelivr.net"></script>
+  <!-- <script src="https://jsdelivr.net"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = 'ТВОЙ_SUPABASE_URL';
-    const SUPABASE_ANON_KEY = 'ТВОЙ_SUPABASE_ANON_KEY';
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
+    // const SUPABASE_URL = 'ТВОЙ_SUPABASE_URL';
+    // const SUPABASE_ANON_KEY = 'ТВОЙ_SUPABASE_ANON_KEY';
+    // const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     async function loadTournamentBracket() {
       const container = document.getElementById('bracket-container');
       try {
-        const { data: matches, error } = await supabase
+        const { data: matches, error } = await supabaseClient
+        // const { data: matches, error } = await supabase
           .from('tournament_matches')
           .select(`
             id, round_name, match_time, court, player1_score, player2_score,
@@ -1034,9 +1040,9 @@
     document.addEventListener('DOMContentLoaded', loadTournamentBracket);
   </script>
       <!-- Сначала официальный скрипт Supabase -->
-  <script src="https://jsdelivr.net"></script>
+  <!-- <script src="https://jsdelivr.net"></script> -->
   <!-- Затем твой очищенный файл -->
-  <script src="supabase.js"></script>
+  <!-- <script src="supabase.js"></script> -->
 </body>
 
 
